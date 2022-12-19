@@ -1,0 +1,48 @@
+*{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+h1{
+    color: aqua;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-image: url('1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+   
+}
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 500px;
+    text-align: center;
+    justify-content: center;
+    margin: 20px;
+}
+label{
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:white;
+}   
+
+input{
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:black;
+}   
+
+.regis{
+    color:red;
+}
+input{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+p{
+    color: aliceblue;
+}

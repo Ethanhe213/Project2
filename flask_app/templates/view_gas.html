@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #map{
+
+            height:500px;
+            width:100%
+        }
+
+    </style>
+
+    <div id="map">  </div>
+    <script>
+        const api_kye=process.env.FLASK_APP_API_KEY
+        function initMap(){
+            var location={lat:{{lat|tojson }},lng:{{long|tojson}}}
+            var map=new google.maps.Map(document.getElementById('map'),{
+                zoom: 16,
+                center: location
+            });
+            var marker=new google.maps.Marker({
+                position:location,
+                map: map
+
+            })
+            console.log(location)
+        }
+        
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{api_key}}&callback=initMap">
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='dashboard.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="top-bar">
+        <div>
+            <h1>Gas price reporting</h1>
+        </div>
+        <div class="right-bar">
+            <div>
+            <h2>Welcome, {{user.first_name}} {{user.last_name}}
+            </div>
+            <div>
+            <a href='/create_gas'>Report a gas price</a>
+            </div>
+            <div>
+            <a href="/logout">Logout</a> </h2>
+            </div>
+            <div>
+                <a href="/dashboard">Change city</a> </h2>
+            </div>
+        </div>
+    </div>
+    <div class="table">
+        <h2>Reported Gas Price</h2>
+        <div>
+            
+            <label for="">My Current City is {{city}} {{state}}</label>
+          
+            
+            <table>
+            <tr>
+                <th>Where</th>
+                <th>Gas Price</th>
+                <th>Date and Time Reported</th>
+                <th>Action</th>
+
+            </tr>
+            {%for i in gases%}
+            <tr>  
+                <td>{{i.address}}</td>  
+                <td>{{i.gasprice}}</td>   
+                <td>{{i.datetime_seen}}</td> 
+                <td><a href="/view/{{i.id}}">view </a>
+        
+            
+
+                {% if i.user.id==user.id:%}
+                    <a href="/edit/{{i.id}}">edit</a>
+                    <a href="/delete/{{i.id}}">delete</a>
+                
+                {%endif%}
+                </td>
+            </tr>
+            {%endfor%}  
+            </table>
+        </div>
+    </div>
+    
+</div>
+
+</body>
+</html>
