@@ -7,6 +7,7 @@
 }
 .right-bar{
     display: flex;
+    margin: 10px;
     flex-direction: column;
 }
 a{
@@ -17,6 +18,8 @@ a{
     text-decoration: none;
     margin: 1px;
     text-align: center;
+    
+    
     
 }
 body{

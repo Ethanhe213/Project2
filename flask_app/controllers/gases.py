@@ -9,13 +9,10 @@ def dashboard():
     cities=gas.Gas.show_all_city()
     list1=[]
     [list1.append(city) for city in cities if city not in list1]
-        
-
-    
     return render_template('dashboard.html',gas=gas.Gas.show_all(),user=user.User.get_by_id(session['user_id']),list=list1)
 @app.route('/create_gas')
 def create_gas():
-    return render_template('create_gas.html')
+    return render_template('create_gas.html',user=user.User.get_by_id(session['user_id']))
 
 @app.route('/delete/<int:id>')
 def delete(id):

@@ -59,4 +59,3 @@ class User:
             flash('account already exists','register')
             is_valid=False
         return is_valid
-    
